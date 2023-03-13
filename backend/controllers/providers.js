@@ -21,7 +21,6 @@ module.exports.edit = function (req, res) {
 module.exports.update = function (req, res) {
     let id = req.params.id;
     let provider = providers.find(provider => provider.id == id);
-    console.log(id);
     provider.firstname = req.body.firstname;
     provider.lastname = req.body.lastname;
     provider.position = req.body.position;
