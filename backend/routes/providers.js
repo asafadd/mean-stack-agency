@@ -16,4 +16,10 @@ router.get('/edit/:id', providersController.edit);
 /* POST edit page. */
 router.post('/update/:id', providersController.update);
 
+/* GET add page. */
+router.get('/add-provider', providersController.addform);
+
+/* POST add page. */
+router.post('/add', providersController.add);
+
 module.exports = router;
