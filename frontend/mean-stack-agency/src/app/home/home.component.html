@@ -1,0 +1,36 @@
+ <h1>{{ title }}</h1>
+  <h2 [style]="green">{{ sum() }}</h2>
+  <div>
+    <input #inputMessage type="text" [(ngModel)]="message">
+
+    <button (click)="clickMe('Hello Raymond')">Click me</button>
+
+    <h2>{{ message }}</h2>
+  </div>
+  <button (click)="toggle_show()">Show/Hide</button>
+  <div>
+    <ng-template *ngIf="show; then showPrivate; else showPublic"></ng-template>
+    <ng-template #showPrivate>
+      <h3>Private message</h3>
+    </ng-template> 
+    <ng-template #showPublic>
+      <h3>Public message</h3>
+    </ng-template>
+  </div>
+
+  <div>
+    <button (click)="add_num()">+</button>
+    <button (click)="delete_num()" >-</button>
+    <table>
+      <ng-container *ngFor="let num of nums; index as i; count as total; even as even; odd as odd">
+        <tr [style]="odd ? green: red" style="color:white; text-align: center;">
+          <td style="width: 50px;">{{ i+1 }}</td>
+          <td style="width: 100px;">{{ num }}</td>
+        </tr>
+      </ng-container>
+    <tr style="text-align: center; font-weight: bold;">
+      <td>Total</td>
+      <td>{{nums.length}}</td>
+    </tr>
+    </table>
+  </div>
