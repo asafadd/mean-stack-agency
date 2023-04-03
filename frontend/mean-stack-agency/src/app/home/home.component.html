@@ -1,36 +1,17 @@
- <h1>{{ title }}</h1>
-  <h2 [style]="green">{{ sum() }}</h2>
-  <div>
-    <input #inputMessage type="text" [(ngModel)]="message">
-
-    <button (click)="clickMe('Hello Raymond')">Click me</button>
-
-    <h2>{{ message }}</h2>
+<!-- Masthead -->
+<header class="masthead">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center justify-content-center text-center">
+      <div class="col-lg-10 align-self-end">
+        <h1 class="text-uppercase text-white font-weight-bold">{{title}}</h1>
+        <hr class="divider my-4">
+      </div>
+      <div class="col-lg-8 align-self-baseline">
+        <p class="text-white-75 font-weight-light mb-5">This is mainly about how to solve technical problems that arise from using front or back end technologies to
+          make web pages or web apps but some of these steps will be applicable to solving technical problems in
+          general.</p>
+        <a class="btn btn-primary btn-xl js-scroll-trigger" routerLink="/about" routerLinkActive="active">Find Out More</a>
+      </div>
+    </div>
   </div>
-  <button (click)="toggle_show()">Show/Hide</button>
-  <div>
-    <ng-template *ngIf="show; then showPrivate; else showPublic"></ng-template>
-    <ng-template #showPrivate>
-      <h3>Private message</h3>
-    </ng-template> 
-    <ng-template #showPublic>
-      <h3>Public message</h3>
-    </ng-template>
-  </div>
-
-  <div>
-    <button (click)="add_num()">+</button>
-    <button (click)="delete_num()" >-</button>
-    <table>
-      <ng-container *ngFor="let num of nums; index as i; count as total; even as even; odd as odd">
-        <tr [style]="odd ? green: red" style="color:white; text-align: center;">
-          <td style="width: 50px;">{{ i+1 }}</td>
-          <td style="width: 100px;">{{ num }}</td>
-        </tr>
-      </ng-container>
-    <tr style="text-align: center; font-weight: bold;">
-      <td>Total</td>
-      <td>{{nums.length}}</td>
-    </tr>
-    </table>
-  </div>
+</header>
